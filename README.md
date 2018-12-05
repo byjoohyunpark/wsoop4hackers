@@ -1,3 +1,4 @@
 # wsoop4hackers
 
-A visual interaction for Hackers performance.
+This repository is a visual tool for Hackers performance in Todd Anderson's Performing the Internet class. 
+
