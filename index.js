@@ -5,30 +5,30 @@ var initialize = 0 ;
 let amb ; 
 let s1, s2, s3, s4, s5, s6;
 let array = [];
+let beep, crush, inter;
 
 
 function preload() {
   soundFormats('mp3', 'ogg');
-  amb = loadSound('ambient.mp3');
-  s1 = loadSound('Shaker1.mp3');
-  s2 = loadSound('Shaker2.mp3');
-  s3 = loadSound('Shaker3.mp3');
-  s4 = loadSound('Shaker4.mp3');
-  s5 = loadSound('Shaker5.mp3');
-  s6 = loadSound('Shaker6.mp3');
+  amb = loadSound('sound/ambient.mp3');
+  s1 = loadSound('sound/Shaker1.mp3');
+  s2 = loadSound('sound/Shaker2.mp3');
+  s3 = loadSound('sound/Shaker3.mp3');
+  s4 = loadSound('sound/Shaker4.mp3');
+  s5 = loadSound('sound/Shaker5.mp3');
+  s6 = loadSound('sound/Shaker6.mp3');
+  beep = loadSound('sound/Beep.mp3');    
+  crush = loadSound('sound/Crush.mp3');    
+  inter = loadSound('sound/inter.mp3');    
+
   array.push(s1);
   array.push(s2);    
   array.push(s3);
   array.push(s4);    
   array.push(s5);
-  array.push(s6);    
-  amb.setVolume(0.7);
-  s1.setVolume(0.7);
-  s2.setVolume(0.7);
-  s3.setVolume(0.7);
-  s4.setVolume(0.7);
-  s5.setVolume(0.7);
-  s6.setVolume(0.7);
+  array.push(s6);   
+    
+  amb.setVolume(0.3);
     
 }
 
@@ -62,6 +62,7 @@ function mousePressed() {
 
 function keyPressed() {
     if (keyIsDown(32)) {
+        inter.play();
         backgroundColor = random(360);
         randomColor = random(360);
         initialize = 100;
@@ -70,6 +71,16 @@ function keyPressed() {
     if(keyCode === ENTER){
         randomColor = random(360);        
     }
+
+    if (keyIsDown(49)) {
+        beep.play();
+    }
+    
+    if (keyIsDown(50)) {
+        crush.play();
+    }
+    
+    
 }
 
 
