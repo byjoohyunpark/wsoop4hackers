@@ -19,7 +19,7 @@ function preload() {
   s6 = loadSound('sound/Shaker6.mp3');
   beep = loadSound('sound/Beep.mp3');    
   crush = loadSound('sound/Crush.mp3');    
-  inter = loadSound('sound/inter.mp3');    
+  inter = loadSound('sound/inter.mp3'); 
 
   array.push(s1);
   array.push(s2);    
@@ -48,14 +48,12 @@ function draw() {
 // Add a new boid into the System
 function mouseDragged() {
     flock.addBoid(new Boid(mouseX, mouseY));
-
     array[ Math.floor(Math.random()*6) ].play();
 }
 
 function mousePressed() {
     flock.addBoid(new Boid(mouseX, mouseY));
     array[ Math.floor(Math.random()*6) ].play();
-    
     
 }
 
@@ -69,18 +67,14 @@ function keyPressed() {
     }
     
     if(keyCode === ENTER){
-        randomColor = random(360);        
+        randomColor = random(360); 
+        crush.play();
     }
 
     if (keyIsDown(49)) {
         beep.play();
     }
-    
-    if (keyIsDown(50)) {
-        crush.play();
-    }
-    
-    
+        
 }
 
 
