@@ -2,12 +2,42 @@ var flock;
 var backgroundColor = 259;
 var randomColor = 120;
 var initialize = 0 ;
+let amb ; 
+let s1, s2, s3, s4, s5, s6;
+let array = [];
+
+
+function preload() {
+  soundFormats('mp3', 'ogg');
+  amb = loadSound('ambient.mp3');
+  s1 = loadSound('Shaker1.mp3');
+  s2 = loadSound('Shaker2.mp3');
+  s3 = loadSound('Shaker3.mp3');
+  s4 = loadSound('Shaker4.mp3');
+  s5 = loadSound('Shaker5.mp3');
+  s6 = loadSound('Shaker6.mp3');
+  array.push(s1);
+  array.push(s2);    
+  array.push(s3);
+  array.push(s4);    
+  array.push(s5);
+  array.push(s6);    
+  amb.setVolume(0.7);
+  s1.setVolume(0.7);
+  s2.setVolume(0.7);
+  s3.setVolume(0.7);
+  s4.setVolume(0.7);
+  s5.setVolume(0.7);
+  s6.setVolume(0.7);
+    
+}
 
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     colorMode(HSB);
     flock = new Flock();
+    amb.play();
 }
 
 function draw() {
@@ -18,10 +48,15 @@ function draw() {
 // Add a new boid into the System
 function mouseDragged() {
     flock.addBoid(new Boid(mouseX, mouseY));
+
+    array[ Math.floor(Math.random()*6) ].play();
 }
 
 function mousePressed() {
     flock.addBoid(new Boid(mouseX, mouseY));
+    array[ Math.floor(Math.random()*6) ].play();
+    
+    
 }
 
 
