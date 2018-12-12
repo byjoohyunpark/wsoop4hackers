@@ -28,7 +28,7 @@ function preload() {
   array.push(s5);
   array.push(s6);   
     
-  amb.setVolume(0.3);
+  amb.setVolume(0.2);
     
 }
 
